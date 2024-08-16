@@ -7,6 +7,6 @@
         @vite('resources/css/app.css')
     </head>
     <body>
-        <h1 class="text-red-500 text-4xl">hello</h1>
+        {{$slot}}
     </body>
 </html>
