@@ -30,7 +30,7 @@
                 <div>
                     <div class="mb-1 font-semibold">Category</div>
 
-                    <x-radio-group name="experience" :options="\App\Models\Job::$category" />
+                    <x-radio-group name="category" :options="\App\Models\Job::$category" />
                 </div>
 
                 <button class="w-full">Filter</button>
