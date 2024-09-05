@@ -9,7 +9,7 @@ class JobController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index1()
     {
         $jobs = Job::query();
 
@@ -28,6 +28,13 @@ class JobController extends Controller
             $query->where('category', request('category'));
         });
         return view('job.index', ['jobs' => $jobs->get()]);
+    }
+    
+    public function index()
+    {
+        $filters = request()->only('search', 'min_salary', 'max_salary', 'experience', 'category');
+
+        return view('job.index', ['jobs' => Job::filter($filters)->get()]);
     }
 
     /**
