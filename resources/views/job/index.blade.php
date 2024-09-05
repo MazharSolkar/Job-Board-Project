@@ -33,8 +33,8 @@
                     <x-radio-group name="category" :options="\App\Models\Job::$category" />
                 </div>
 
-                <button class="w-full">Filter</button>
             </div>
+            <x-button class="w-full">Filter</x-button>
         </form>
     </x-card>
 
