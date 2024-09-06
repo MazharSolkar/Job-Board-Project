@@ -9,4 +9,28 @@
             {!! nl2br(e($job->description)) !!}
         </p>
     </x-job-card>
+
+    <x-card class="mb-4">
+        <h2 class="mb-4"><strong>More Jobs from </strong>{{$job->employer->company_name}}</h2>
+
+        <div class="text-sm text-slate-500">
+            @foreach ($job->employer->jobs as $otherJob)
+                @if ($otherJob->id !== $job->id) <!-- Skip the current job -->
+                    <div class="mb-4 flex justify-between">
+                        <div>
+                            <div class="text-slate-700">
+                                <a href="{{route('jobs.show', $otherJob)}}">{{$otherJob->title}}</a>
+                            </div>
+                            <div class="text-xs">
+                                {{$otherJob->created_at->diffForHumans()}}
+                            </div>
+                        </div>
+                        <div class="text-xs">
+                            ₹{{$otherJob->salary}}
+                        </div>
+                    </div>
+                @endif
+            @endforeach
+        </div>
+    </x-card>
 </x-layout>
