@@ -7,11 +7,11 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="mx-auto mt-10 max-w-2xl text-slate-700 bg-gradient-to-r from-indigo-100 from-10% via-sky-100 via-30% to-emerald-100 to-90%">
-        {{auth()->user()->name ?? 'Guest'}}
+        {{-- {{auth()->user()->name ?? 'Guest'}} --}}
 
         <nav class="mb-8 flex justify-between text-lg font-medium">
             <ul class="flex space-x-2">
-                <li><a href="{{route('jobs.index')}}"></a></li>
+                <li><a href="{{route('jobs.index')}}">Home</a></li>
             </ul>
             <ul class="flex space-x-2">
                 @auth
